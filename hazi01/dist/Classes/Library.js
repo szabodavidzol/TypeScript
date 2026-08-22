@@ -1,34 +1,25 @@
-import { Book } from './Book';
-import { ILibrary } from '../interfaces/ILibrary';
-
-class Library implements ILibrary {
-    public books: Book[];
-
+class Library {
     constructor() {
         this.books = [];
     }
-
-    addBook(book: Book): void {
+    addBook(book) {
         this.books.push(book);
     }
-
-    removeBook(id: string): void {
+    removeBook(id) {
         const index = this.books.findIndex(book => book['_id'] === id);
         if (index !== -1) {
             this.books.splice(index, 1);
         }
     }
-
-    findBookById(id: string): Book | undefined {
+    findBookById(id) {
         return this.books.find(book => book['_id'] === id);
     }
-
-    listAllBooks(): Book[] {
+    listAllBooks() {
         if (this.books.length === 0) {
             console.log("Nincs könyv a könyvtárban.");
         }
         return this.books;
     }
 }
-
 export { Library };
+//# sourceMappingURL=Library.js.map
