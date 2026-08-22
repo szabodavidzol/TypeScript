@@ -2,19 +2,19 @@ import { Library } from './Library';
 import { Book } from './Book';
 
 class User {
-    private _userId: string;
-    private _name: string;
-    private _email: string;
+    public _userId: string;
+    public _name: string;
+    public _email: string;
 
     constructor(userId: string, name: string, email: string) {
         this._userId = userId;
         this._name = name;
         this._email = email;
     }
-    borrowBook(library: Library, id: string) {
-        const book = library.findBookById(id);
+    borrowBook(library: Library, bookId: string) {
+        const book = library.findBookById(bookId);
         if (book) {
-            library.removeBook(id);
+            library.removeBook(bookId);
         }
     }
 }

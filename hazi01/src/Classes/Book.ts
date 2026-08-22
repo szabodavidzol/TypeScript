@@ -1,8 +1,8 @@
 class Book {
-    private _id: string;
-    private _title: string;
-    private _author: string;
-    private _price: number;
+    public _id: string;
+    public _title: string;
+    public _author: string;
+    public _price: number;
 
     constructor(id: string, title: string, author: string, price: number) {
         this._id = id;
