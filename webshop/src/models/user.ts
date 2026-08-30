@@ -9,4 +9,8 @@ export class User {
         this.email = email;
     }
 
+    public getUserId(): string {
+        return this.userId;
+    }
+
 }

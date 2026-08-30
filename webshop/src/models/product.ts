@@ -10,5 +10,20 @@ export class Product {
         this.price = price;
         this.description = description;
     }
+
+    public getId(): string {
+        return this.id;
+    }
+    public getName(): string {
+        return this.name;
+    }
+
+    public getPrice(): number {
+        return this.price;
+    }
+
+    public getDescription(): string {
+        return this.description;
+    }
     
 }

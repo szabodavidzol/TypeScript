@@ -17,6 +17,20 @@ export class Order {
         this.status = OrderStatus.New;
     }
 
-       
+    public getId(): string {
+        return this.Orderid;
+    }
+
+    public getStatus(): OrderStatus {
+        return this.status;
+    } 
+    
+    public updateStatus(newStatus: OrderStatus): void {
+        this.status = newStatus;
+    }
+
+    public calculateTotalPrice(): number {
+        return this.products.reduce((total, product) => total + product.getPrice(), 0);
+    }
 
 }

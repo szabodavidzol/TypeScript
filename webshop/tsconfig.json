@@ -1,19 +1,14 @@
 {
-       
     "compilerOptions": {
         "outDir": "./dist",
         "rootDir": "./src",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "es2015",
         "target": "es6",
-        "module": "commonjs",
-        "strict": true,
-        "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true,
-        "skipLibCheck": true,
-        "verbatimModuleSyntax": true
+        "jsx": "react"
     },
     "include": [
         "./src/**/*"
     ]
-
-
 }
