@@ -1,4 +1,8 @@
-export class Product {
+export interface id {
+    getId(): string;
+}
+
+export class Product implements id {
     private id:string;
     private name:string;
     private price:number;

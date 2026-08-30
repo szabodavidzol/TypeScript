@@ -1,24 +1,25 @@
 import { Product } from './product';
+import {id} from './product';
 
-enum OrderStatus {
+export enum OrderStatus {
     New = 'új',
     Processing = 'feldolgozás alatt',
     Delivered = 'kézbesítve'
 }
 
-export class Order {
-    private Orderid:string;
+export class Order implements id {
+    private orderId:string;
     private products:Product[];
-    private status:OrderStatus;
+    private status:OrderStatus;    
 
-    constructor(Orderid:string, products:Product[]) {
-        this.Orderid = Orderid;
+    constructor(orderId:string, products:Product[]) {
+        this.orderId = orderId;
         this.products = products;
         this.status = OrderStatus.New;
     }
 
     public getId(): string {
-        return this.Orderid;
+        return this.orderId;
     }
 
     public getStatus(): OrderStatus {

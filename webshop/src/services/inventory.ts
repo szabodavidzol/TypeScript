@@ -12,19 +12,23 @@ export class Inventory {
     }
 
     public removeProduct(productId: string): void {
-        this.products = this.products.filter(product => product.id() !== productId);
+        this.products = this.products.filter(product => product.getId() !== productId);
     }
 
     public searchProductByName(name: string): Product[] {
-        return this.products.filter(product => product.name().toLowerCase().includes(name.toLowerCase()));
+        return this.products.filter(product => product.getName().toLowerCase().includes(name.toLowerCase()));
     }
 
     public getProductById(productId: string): Product | undefined {
-        return this.products.find(product => product.id() === productId);
+        return this.products.find(product => product.getId() === productId);
     }
 
     public getAllProducts(): Product[] {
         return this.products;
+    }
+
+    public isAvailable(productId: string): boolean {
+        return this.products.some(product => product.getId() === productId);
     }
 
 }
