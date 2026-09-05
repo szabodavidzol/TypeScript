@@ -1,0 +1,62 @@
+# Generikus Todo Lista Kezelő (TypeScript)
+
+Egy modern, típusbiztos, generikus alapú Todo Lista Kezelő alkalmazás TypeScriptben. A projekt demonstrálja a TypeScript haladó nyelvi elemeit, mint például a **generikusokat**, **dekorátorokat**, **típusőröket (type guards)**, **union típusokat**, valamint a beépített `Map` adatszerkezetet.
+
+---
+
+## Fő Funkciók és Típusbiztonság
+
+- **Generikus Osztályok (`TodoItem<T>`):** Lehetővé teszi, hogy a teendők tartalma rugalmas legyen (akár egyszerű szöveg, akár összetett objektum).
+- **Union Típusok:** Támogatja mind a szöveges, mind a dátummal ellátott (`message` + `dueDate`) teendőket.
+- **Típusőrök (Type Guards):** Futásidőben biztonságosan megkülönbözteti a különböző teendőtípusokat.
+- **Map Adatszerkezet:** Hatékony és gyors elemkezelés (hozzáadás, törlés, keresés) kulcs-érték párok alapján.
+- **Dekorátorok:** Metódus-dekorátor a teendők hozzáadásának automatikus konzolos logolására (`experimentalDecorators`).
+- **Moduláris Architektúra:** Tiszta, logikai egységekre bontott fájlstruktúra.
+
+---
+
+## Projektstruktúra
+
+```text
+todo-list-app/
+│
+├── src/
+│   ├── models/
+│   │   └── todoItem.ts            # A TodoItem generikus osztály és típusdefiníciók
+│   │
+│   ├── services/
+│   │   └── todoList.ts            # A Map-et használó TodoList osztály
+│   │
+│   ├── decorators/
+│   │   └── logAddition.ts         # Dekorátor a teendők hozzáadásának logolására
+│   │
+│   ├── utils/
+│   │   └── typeGuards.ts          # Típusőrök a különböző teendő típusok kezelésére
+│   │
+│   └── index.ts                   # Az alkalmazás belépési pontja
+│
+├── package.json                   # Node.js konfiguráció és függőségek
+└── tsconfig.json                  # TypeScript fordító beállításai
+
+## Telepítés és Futtatás
+
+### Előfeltételek
+A futtatáshoz szükséges a [Node.js](https://nodejs.org/) (és a benne lévő npm) telepítése.
+
+### 1. Függőségek telepítése
+Nyisd meg a terminált a projekt gyökérkönyvtárában, majd futtasd:
+```bash
+npm install
+```
+
+### 2. Alkalmazás fordítása és futtatása
+A projekt fordításához és azonnali futtatásához használd a következő parancsot:
+```bash
+npm start
+```
+*Ez a parancs lefordítja a TypeScript fájlokat a `dist/` mappába, majd elindítja a Node.js-t.*
+
+Ha csak külön szeretnéd fordítani a kódot:
+```bash
+npm run build
+```
