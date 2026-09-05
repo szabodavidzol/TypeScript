@@ -1,0 +1,13 @@
+{
+    "name": "todo-list-app",
+    "version": "1.0.0",
+    "description": "Generikus Todo Lista Kezelő TypeScriptben",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "node dist/index.js"
+    },
+    "devDependencies": {
+        "typescript": "^4.5.4"
+    }
+}
